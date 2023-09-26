@@ -1,6 +1,27 @@
-B BC
+Date : 22/09/2023
 
-DhgytD
-kjlghkfxydtwsgerqSWI
+NOM : NTONDA
+POSTNOM_ : LOBE
+PRENOM _ : Wighens
+CLASSE __: Premiére A
+ECOLE EP. Francois
+CODE  71005010
 
-xtfcj
+Epreuve d’Evaluation de |’Enseignement Primaire
+
+Consigne : Remplir l’alphabet de la bonne réponse
+Exemple : Cc C est la réponse qui sera considérée
+
+Questions
+
+1. C’est quoi laRDC:
+. Un pare B.un pays . Un site touristique
+
+2. C’est quoi laRDC:
+A. Un parc . Un pays . Un site touristique
+
+Réponse
+
+1 E
+2 c
+3 A

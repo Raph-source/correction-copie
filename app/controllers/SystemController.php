@@ -47,7 +47,7 @@ class SystemController{
                     if(in_array($extension, $extensionEligigle)){
                         //charger l'image
                         $image = $_FILES['copie']['tmp_name'];
-                        //Sauvegarde l'image
+
                         $cheminTexte = STORAGE.'sortie';
                         //générer le texte
                         shell_exec("tesseract $image $cheminTexte");

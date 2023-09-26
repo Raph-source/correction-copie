@@ -17,8 +17,9 @@
                     'planifier-test' => 'getFormNotifier',
                     'formulaire-notication' => 'planifierTest',
                     'charger-la-copie' => 'getFormChargerCopie',
-                    'voir-evaluation' => 'voirEvaluation'
-                    
+                    'voir-evaluation' => 'voirEvaluation',
+                    'charger-model' => 'getFormChargerModel',
+                    'formulaire-charger-model' => 'chargerModel'
                 ],
 
                 'SystemController' => [

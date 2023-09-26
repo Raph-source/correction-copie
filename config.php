@@ -5,8 +5,8 @@ error_reporting(E_ALL);
 $host = $_SERVER['HTTP_HOST'];
 $root = $_SERVER['DOCUMENT_ROOT'];
 
-define('HOST', '//'.$host.'/tfc/');//lien absolu du projet
-define('ROOT', $root.'/tfc/');//adresse absolue du projet
+define('HOST', '//'.$host.'/MemoireWighens/');//lien absolu du projet
+define('ROOT', $root.'/MemoireWighens/');//adresse absolue du projet
 
 //adresse absolue vers les fichiers app (controllers, models, views) 
 define('CONTROLLER', ROOT.'app/controllers/');

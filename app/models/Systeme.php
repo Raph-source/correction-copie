@@ -9,7 +9,7 @@ class Systeme{
     }
 
     public function checkEnseignant($pseudo, $pwd):bool{
-        $requete = $this->bdd->prepare("SELECT * FROM enseignant WHERE prenom = ? AND pwd = ?");
+        $requete = $this->bdd->prepare("SELECT * FROM enseignant WHERE prenom = ? AND password = ?");
         $requete->execute([$pseudo, $pwd]);
         $trouver = $requete->fetchAll();
 
@@ -20,7 +20,7 @@ class Systeme{
     }
 
     public function checkInspecteur($pseudo, $pwd):bool{
-        $requete = $this->bdd->prepare("SELECT * FROM inspecteur WHERE nom = ? AND pwd = ?");
+        $requete = $this->bdd->prepare("SELECT * FROM inspecteur WHERE nom = ? AND password = ?");
         $requete->execute([$pseudo, $pwd]);
         $trouver = $requete->fetchAll();
 

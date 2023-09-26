@@ -116,4 +116,49 @@ class InspecteurController implements I_ActeurController{
         require_once(VIEW.'inspecteur/voirEvaluation.php');
     }
     
+    public function getFormChargerModel(){
+        require_once VIEW.'inspecteur/chargerModel.php';
+    }
+    
+    public function chargerModel(){
+        //verifier les données
+        if(!empty($_FILES['modele'])){
+            if($_FILES['modele']['size'] <= 8000000){
+                if($_FILES['modele']['error'] == 0){
+                    //réperation de l'extension de l'image
+                    $extension = pathinfo($_FILES['modele']['name'], PATHINFO_EXTENSION);
+                    $extensionEligigle = ['jpeg', 'PNG', 'png'];
+                    if(in_array($extension, $extensionEligigle)){
+                        //uploader l'image
+                        $modele = $_FILES['modele']['tmp_name'];
+                        //générer le texte
+                        $cheminDuTexte = STORAGE.'/modele/modele';
+                        shell_exec("tesseract $modele $cheminDuTexte");
+                        
+                        $tableau= file($cheminDuTexte.'.txt');
+                        var_dump($tableau) ; exit;
+
+                        $notif = "le modele à été sauvegardé avec succès";
+                        require_once(VIEW.'inspecteur/chargerModel.php');
+                    }
+                    else{
+                        $notif = "la photo dois être au format <strong>png</strong>";
+                        require_once(VIEW.'inspecteur/chargerModel.php');
+                    }
+                }
+                else{
+                    $notif = "la photo contient des erreurs";
+                    require_once(VIEW.'inspecteur/chargerModel.php');
+                }
+            }
+            else{
+                $notif = "la taille est trop grande";
+                require_once(VIEW.'inspecteur/chargerModel.php');
+            }
+        }
+        else{
+            $notif = "veuillez choisi une copie";
+            require_once(VIEW.'inspecteur/chargerModel.php');
+        }
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 $title = "Home";
-$style = ASSETS_CSS.'inspecteur/home.css';
+$style = ASSETS_CSS.'inspecteur/chargerCopie.css';
 require_once(HEADER);
 if(isset($notif))
     echo $notif;
