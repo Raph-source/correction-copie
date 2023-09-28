@@ -16,7 +16,7 @@ class SystemController{
                 session_start();
                 $_SESSION['pseudo'] = $pseudo;
                 $_SESSION['pwd'] = $pwd;
-
+                
                 $this->model->enseignant->setAttribut($pseudo, $pwd);
                 $trouver = $this->model->enseignant->getResultat();
 
@@ -92,10 +92,16 @@ class SystemController{
                         }
                        //insertion dans la bdd
                        $this->model->cotation->setAttribut($codeEleve, $coteMoyenne, $coteFacile, $coteDifficile);
-                       $this->model->cotation->save();
-                        
-                       $notif = "Correction réussi";
-                       require_once(VIEW.'inspecteur/chargerCopie.php');                    }
+                       //tester si la copie est conforme
+                       if($this->model->cotation->save()){
+                            $notif = "Correction réussi";
+                            require_once(VIEW.'inspecteur/chargerCopie.php');
+                       }
+                       else{
+                            $notif = "Erreur lors de la correction. Rassuerez-vous que la copie soit conforme";
+                            require_once(VIEW.'inspecteur/chargerCopie.php');
+                       }                    
+                    }
                     else{
                         $notif = "la photo dois être au format <strong>png</strong>";
                         require_once(VIEW.'inspecteur/chargerCopie.php');

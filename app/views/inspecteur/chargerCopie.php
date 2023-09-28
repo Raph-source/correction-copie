@@ -2,8 +2,6 @@
 $title = "Home";
 $style = ASSETS_CSS.'inspecteur/chargerCopie.css';
 require_once(HEADER);
-if(isset($notif))
-    echo $notif;
 ?>
 <div>
    <form action="formulaire-charger-copie" method="post" enctype="multipart/form-data">
