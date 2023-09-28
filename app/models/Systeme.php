@@ -1,11 +1,14 @@
 <?php
 require_once(MODEL.'Enseignant.php');
+require_once(MODEL.'cotation.php');
 class Systeme{
     private $bdd;
     public $enseignant;
+    public $cotation;
     public function __construct(){
         $this->bdd = new PDO("mysql:host=localhost;dbname=tfc", "root", "");
         $this->enseignant = new Enseignant();
+        $this->cotation = new Cotation();
     }
 
     public function checkEnseignant($pseudo, $pwd):bool{

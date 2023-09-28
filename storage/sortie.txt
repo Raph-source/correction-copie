@@ -1,11 +1,11 @@
 Date : 22/09/2023
 
 NOM : NTONDA
-POSTNOM_ : LOBE
-PRENOM _ : Wighens
-CLASSE __: Premiére A
+POSTNOM : LOBE
+PRENOM Wighens
+CLASSE Premiére A
 ECOLE EP. Francois
-CODE  71005010
+CODE 71005010
 
 Epreuve d’Evaluation de |’Enseignement Primaire
 
@@ -23,5 +23,5 @@ A. Un parc . Un pays . Un site touristique
 Réponse
 
 1 E
-2 c
+2 D
 3 A

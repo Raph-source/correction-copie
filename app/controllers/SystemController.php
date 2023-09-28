@@ -51,10 +51,51 @@ class SystemController{
                         $cheminTexte = STORAGE.'sortie';
                         //générer le texte
                         shell_exec("tesseract $image $cheminTexte");
+
+                        //récuperation du texte de la copie et du modele
+                        $tableauReponseCopie= file($cheminTexte.'.txt');
+                        $tableauReponseModel = file(STORAGE.'modele/modele.txt');
                         
-                        $tableau= file($cheminTexte.'.txt');
-                        var_dump($tableau) ; exit;
-                    }
+                        //récuperation du code de l'élève
+                        $codeEleve = str_replace('CODE ', '', $tableauReponseCopie[7]);
+                        $codeEleve = intval($codeEleve);
+                        $codeEleve = strval($codeEleve);
+
+                        //CORRECTION DE LA COPIE
+                        //niveau question
+                        $coteDifficile = 0;
+                        $coteMoyenne = 0;
+                        $coteFacile = 0;
+
+                        $pointObetenue = 0;
+                        for($i = 24; $i <= 26; $i++){
+                            for($j = 8; $j <= 10  ; $j++){
+                                if($tableauReponseCopie[$i][0] == $tableauReponseModel[$j][0]){
+                                    
+                                    $reponseCopie = strtoupper($tableauReponseCopie[$i][2]);
+                                    $reponseModel = strtoupper($tableauReponseModel[$j][2]);
+
+                                    if($reponseCopie == $reponseModel){
+                                        //teste du niveau de la question
+                                        if(intval($tableauReponseModel[$j][4]) === 5){
+                                            $coteDifficile += intval($tableauReponseModel[$j][4]);
+                                        }
+                                        else if(intval($tableauReponseModel[$j][4]) === 3){
+                                            $coteMoyenne += intval($tableauReponseModel[$j][4]);
+                                        }
+                                        else{
+                                            $coteFacile += intval($tableauReponseModel[$j][4]);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                       //insertion dans la bdd
+                       $this->model->cotation->setAttribut($codeEleve, $coteMoyenne, $coteFacile, $coteDifficile);
+                       $this->model->cotation->save();
+                        
+                       $notif = "Correction réussi";
+                       require_once(VIEW.'inspecteur/chargerCopie.php');                    }
                     else{
                         $notif = "la photo dois être au format <strong>png</strong>";
                         require_once(VIEW.'inspecteur/chargerCopie.php');
