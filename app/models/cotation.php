@@ -4,7 +4,6 @@ class Cotation{
     private $coteMoyenne;
     private $coteFacile;
     private $coteDifficile;
-    private $total;
     private $bdd;
 
     public function __construct(){
@@ -15,19 +14,17 @@ class Cotation{
         $this->coteMoyenne = $coteMoyenne;
         $this->coteFacile = $coteFacile;
         $this->coteDifficile = $coteDifficile;
-        $this->total = $coteMoyenne + $coteFacile + $coteDifficile;
     }
     //cette méthode permet d'enregistrer une cotation
     public function save():bool{
         try{
-            $requete = $this->bdd->prepare("INSERT INTO cotation(codeEleve, cotFac,	cotMoy, cotDiff, total) 
-            VALUES (:codeEleve, :coteFacile, :coteMoyenne, :coteDifficile, :total)");
+            $requete = $this->bdd->prepare("INSERT INTO cotation(codeEleve, cotFac,	cotMoy, cotDiff) 
+            VALUES (:codeEleve, :coteFacile, :coteMoyenne, :coteDifficile)");
 
             $requete->bindParam(':codeEleve', $this->codeEleve);
             $requete->bindParam(':coteFacile', $this->coteFacile);
             $requete->bindParam(':coteMoyenne', $this->coteMoyenne);
             $requete->bindParam(':coteDifficile', $this->coteDifficile);
-            $requete->bindParam(':total', $this->total);
 
             $requete->execute();
             

@@ -41,7 +41,8 @@ class Enseignant implements I_Acteur{
     }
     public function getResultat():array{
         Enseignant::setId();
-        $requete = $this->bdd->prepare("SELECT el.nom nomEleve, el.postNom postNomEleve, el.prenom prenomEleve, ct.total pointEleve
+        $requete = $this->bdd->prepare("SELECT el.nom nomEleve, el.postNom postNomEleve, el.prenom prenomEleve, 
+                    ct.cotFac coteFacile, ct.cotMoy coteMoyenne, ct.cotDiff coteDifficile
                     FROM cotation AS ct INNER JOIN eleve AS el
                     ON ct.codeEleve = el.code
                     INNER JOIN classe AS cl ON el.idClasse = cl.id

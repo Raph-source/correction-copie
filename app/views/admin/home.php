@@ -5,8 +5,7 @@ require_once(HEADER);
 ?>
 <h1>Home admin</h1>
 <div>
-    <a href="">Créer un compte</a><br>
-    <a href="">configurer une école</a><br>
+    <a href="ajouter-ecole">ajouter une école</a><br>
     <a href="">affecter un élève</a><br>
 </div>
 <?php

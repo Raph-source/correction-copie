@@ -10,7 +10,10 @@ require_once(HEADER);
             <th>Nom</th>
             <th>Post-nom</th>
             <th>Prénom</th>
-            <th>Point obtenu</th>
+            <th>Question faciles</th>
+            <th>Question moyennes</th>
+            <th>Question difficiles</th>
+            <th>Total</th>
         </tr>
     </thead>
     <tbody>
@@ -19,7 +22,14 @@ require_once(HEADER);
                 <td><?php echo $valeur['nomEleve']?></td>
                 <td><?php echo $valeur['postNomEleve']?></td>
                 <td><?php echo $valeur['prenomEleve']?></td>
-                <td><?php echo $valeur['pointEleve']?></td>
+                <td><?php echo $valeur['coteFacile']?></td>
+                <td><?php echo $valeur['coteMoyenne']?></td>
+                <td><?php echo $valeur['coteDifficile']?></td>
+                <?php
+                    //somme des trois côte
+                    $total = $valeur['coteFacile'] + $valeur['coteMoyenne'] + $valeur['coteDifficile'];
+                ?>
+                <td><?php echo $total?></td>
             </tr>
         <?php endforeach?>
     </tbody>    

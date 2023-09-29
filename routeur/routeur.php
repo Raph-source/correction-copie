@@ -8,9 +8,11 @@
         public function __construct($request){
             $this->request = $request;
             $this->allRequest = [
-                'AdminEcoleController' => [
+                'AdminController' => [
                     'motCleAdmin' => 'getAuthInspecteur',
-                    'formulaire-authentification-admin' => 'authentification'
+                    'formulaire-authentification-admin' => 'authentification',
+                    'ajouter-ecole' => 'getFormAjoutEcole',
+                    'formulaire-ajout-ecole' => 'ajouterEcole'
                 ],
     
                 'InspecteurController' => [
@@ -32,7 +34,7 @@
         //cette fonction renvoi au controleur demandé
         public function goToController(){
             //inclusion des controleurs
-            require_once(CONTROLLER.'AdminEcoleController.php');
+            require_once(CONTROLLER.'AdminController.php');
             require_once(CONTROLLER.'SystemController.php');
             require_once(CONTROLLER.'InspecteurController.php');
             

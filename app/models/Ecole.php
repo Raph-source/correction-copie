@@ -28,4 +28,29 @@ class Ecole{
 
         return $trouver['nom'];
     }
+
+    public function save($nom, $code, $province):bool{
+        try{
+            $requete = $this->bdd->prepare("INSERT INTO ecole(nom, code, province)
+            VALUES(:nom, :code, :province)");
+            $requete->bindParam(':nom', $nom);
+            $requete->bindParam(':code', $code);
+            $requete->bindParam(':province', $province);
+            $requete->execute();
+
+            return true;
+        }catch(Exception $e){
+            return false;
+        }
+
+    }
+    public function getId($code):int{
+        $requette = $this->bdd->prepare("SELECT id FROM ecole WHERE code = :code");
+        $requette->bindParam(':code',$code);
+        $requette->execute();
+
+        $trouver = $requette->fetch();
+
+        return $trouver['id'];
+    }
 }
