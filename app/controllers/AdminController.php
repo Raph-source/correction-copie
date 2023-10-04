@@ -89,36 +89,43 @@ class AdminController implements I_ActeurController{
                             $i++;
                             $collone++;
                         }
-
                         // -récuperation des enseignants
                         $tabeauEnseignant = [];
                         $collone = 4;
                         $i = 0;
-                        while($feuille->getCellByColumnAndRow($collone, 2) == NULL){
+                        while($feuille->getCellByColumnAndRow($collone, 2)->getValue() !== NULL){
                             $tabeauEnseignant[$i] = $feuille->getCellByColumnAndRow($collone, 2)->getValue();
                             $i++;
+                       
                             $collone++;
                         }
-
+                        
                         // -récuperation des éleves
                         $nombreClasse = $collone - 4;
-                        $tabeauEleve = [];
-                        $collone = 4;
-
+                        $tableauEleve = [];
+                        
+                        $collone = 4;//collone de début
+                        $j = 0;
                         while($nombreClasse != 0){
                             $ligne = 3;
                             $eleves = [];
                             $i = 0;
 
-                            while($feuille->getCellByColumnAndRow($collone, $ligne) == NULL){
-                                $eleves[$i] = $feuille->getCellByColumnAndRow($collone, $ligne);
+                            while($feuille->getCellByColumnAndRow($collone, $ligne)->getValue() !== NULL){
+                                $eleves[$i] = $feuille->getCellByColumnAndRow($collone, $ligne)->getValue();
                                 $ligne++;
+                                $i++;
                             }
+                            
+                            $tableauEleve[$j] = $eleves;//tout les éleve d'une classe
+                            
+                            $collone++;//changer la colonne
+                            $j++;
 
                             $nombreClasse--;
                         }
 
-
+                        var_dump($tableauEleve); exit;
                         //INSERTION DANS LA BDD
                         //     -insertion de l'école
                         if($this->model->ecole->save($nomEcole, $codeEcole, $province)){
