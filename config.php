@@ -26,6 +26,8 @@ define('ASSETS_CSS', HOST.'assets/css/');
 //chemin absolu vers les assets js
 define('ASSETS_JS', HOST.'assets/js/');
 
+define('ASSETS_IMG', HOST.'assets/img/');
+
 //chemin absolue vers le dossier bibliotheque
 define("BIBLIOTHEQUE", ROOT.'bibliotheque/');
 

@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Poppins:wght@300;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+html {
+  height: 100vh;
+}
+html body {
+  height: 100vh;
+}
+html body .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.container .content {
+  position: relative;
+  width: 45%;
+  height: 100%;
+  background-image: url("../../img/000_1we8zn_0.webp");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container .content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 102, 255, 0.753);
+}
+.container .content h3, .container .content .text {
+  position: absolute;
+  color: white;
+  left: 3em;
+  z-index: 3;
+}
+.container .content h3 {
+  top: 3em;
+  color: white;
+  margin-bottom: 2em;
+  font-size: 25px;
+}
+.container .content h3 span {
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 102, 255, 0.897);
+  border-radius: 3px;
+  padding: 0.2em;
+  margin-left: 0.1em;
+}
+.container .content .text {
+  left: 4.8em;
+  top: 35%;
+}
+.container .content .text p:first-child {
+  font-size: 45px;
+}
+.container .option {
+  width: 50%;
+  height: 100%;
+  padding-top: 13em;
+  padding-bottom: 13em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .option h3 {
+  font-size: 28px;
+  color: rgba(0, 102, 255, 0.897);
+  margin-bottom: 2em;
+  font-size: 25px;
+}
+.container .option h3 span {
+  background-color: rgba(0, 102, 255, 0.897);
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+  padding: 0.2em;
+  margin-left: 0.1em;
+}
+.container .option .action {
+  display: flex;
+  justify-content: space-between;
+}
+.container .option .action .cards {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  padding: 2em;
+  margin-left: 3em;
+  transition: all 0.3s ease-in-out;
+}
+.container .option .action .cards:hover {
+  box-shadow: 1px 1px 20px rgb(228, 228, 228);
+  background-color: rgb(248, 248, 248);
+}
+.container .option .action a {
+  color: rgba(0, 102, 255, 0.897);
+  display: block;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .option .action span {
+  display: block;
+  margin-left: 0.5em;
+}
+
+/*# sourceMappingURL=home.css.map */

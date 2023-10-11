@@ -1,0 +1,35 @@
+//@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Poppins:wght@300;500&display=swap');
+
+
+@mixin begin
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  poppins;
+}
+
+@mixin height100
+{
+    height: 100vh;
+}
+
+
+@mixin center_flex($flex-direction-value,$align-position-value : center,$justify-content-value : center)
+{
+    display: flex;
+    flex-direction: $flex-direction-value;
+    justify-content: $justify-content-value;
+    align-items: $align-position-value;
+}
+@mixin button($bg-color,$text-color:white,$pd:1em)
+{
+    cursor: pointer;
+    padding: $pd;
+    background-color: $bg-color;
+    color: $text-color;
+}
+@mixin dimension($height-value,$width-value:100%){
+    height: $height-value;
+    width: $width-value;
+}

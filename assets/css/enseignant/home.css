@@ -1,0 +1,56 @@
+.container .content {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-image: url("../../img/ecoliers-maternel-primaire-mokengeli-rentree-020919-800px.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container .option {
+    
+    width: 100%;
+    height: 50%;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    display: block;
+    flex-direction: none;
+    justify-content: none;
+    align-items: none;
+  }
+
+  .container .option .action {
+
+    height: 200%!important;
+    width: 100%;
+
+    display: block;
+    padding: 2em;
+  }
+
+  .container .option .action table{
+    width: 100%;
+    box-shadow: 0px 0px 5px rgb(228, 228, 228);
+    border-collapse: collapse;
+  }
+  .container .option .action table tbody tr:nth-child(1n){
+    background-color: rgb(243, 240, 240);
+    border: 2px solid  rgb(243, 240, 240);
+    border-left: 3px solid rgb(77, 150, 218);
+    transition: all 0.3s ease-in-out;
+  }  
+  .container .option .action table tbody tr:hover{
+    border: 2px solid rgb(170, 170, 170);
+    border-left: 3px solid rgb(77, 150, 218);
+  }  
+  .container .option .action table th{
+    font-weight: 400;
+    padding: 0.5em;
+    border-radius: 5px;
+  }
+  .container .option .action table td{
+    padding: 0.5em;
+    text-align: center;
+  }
+  

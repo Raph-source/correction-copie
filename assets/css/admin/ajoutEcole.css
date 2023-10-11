@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+html {
+  height: 100vh;
+}
+html body {
+  height: 100vh;
+}
+html body .container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .card {
+  height: 60%;
+  padding: 2em;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+}
+.container .card h3 {
+  margin-left: 0.5em;
+  font-size: 25px;
+  color: rgb(4, 163, 255);
+}
+.container .card .card-image {
+  position: relative;
+  height: 80%;
+  width: 100%;
+}
+.container .card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.container .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  margin-top: 4em;
+  margin-left: 2em;
+}
+.container .card .card-body .click-div {
+  cursor: pointer;
+  border: 5px dashed rgb(179, 179, 179);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .card .card-body .click-div img {
+  height: 4em;
+  width: 4em;
+}
+.container .card .card-body .click-div p {
+  font-weight: 500;
+  color: rgb(61, 61, 61);
+}
+.container .card .card-body .file-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  height: 0em;
+  margin-top: 1.8em;
+  width: 100%;
+  padding-left: 1em;
+  background-color: rgb(0, 197, 154);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.container .card .card-body .file-list .icon {
+  width: 2em;
+  height: 2em;
+  margin-right: 1em;
+}
+.container .card .card-body .file-list .icon img {
+  width: 0%;
+  height: 0%;
+  object-fit: cover;
+}
+.container .card .card-body .file-list span {
+  color: white;
+  font-weight: 500;
+}
+.container .card .card-body .file-list-visible {
+  height: 8em;
+}
+.container .card .card-body .file-list-visible .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .card .card-body form {
+  width: 100%;
+}
+.container .card .card-body form input[type=submit] {
+  cursor: pointer;
+  border: none;
+  padding: 0.8em;
+  display: block;
+  width: 100%;
+  background-color: rgb(4, 163, 255);
+  color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+.container .card .card-body form input[type=submit]:hover {
+  background-color: rgb(0, 130, 206);
+}
+.container .erreur p {
+  margin-top: 1em;
+  text-transform: capitalize;
+  padding: 0.5em;
+  background-color: rgb(243, 61, 61);
+  border-radius: 5px;
+  color: white;
+}
+
+/*# sourceMappingURL=ajoutEcole.css.map */

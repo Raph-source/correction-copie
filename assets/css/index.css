@@ -5,16 +5,8 @@ html body .container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../../img/20210516_082833-1024x765.jpg");
+    background-image: url("../img/20200616-DRC-01-780x439.jpg") !important;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-
-  .container .form form input{
-    outline: none;
-  }
-  .container .form form input[type=mail]{
-    outline: none;
-    text-indent: 2em;
   }
